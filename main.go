@@ -16,7 +16,7 @@ func main() {
 	s.push(3)
 	s.push(4)
 	s.push(5)
-	s.pop(2)
+	s.pop()
 
 	fmt.Println(s.data)
 	fmt.Println(s.top)
@@ -40,7 +40,7 @@ func (s *stack) isFull() bool {
 	}
 }
 
-func (s *stack) pop(x int) {
+func (s *stack) pop() {
 	if !s.isEmpty() {
 		s.data = append(s.data[:s.top-1], s.data[s.top-1+1:]...)
 		s.top--
